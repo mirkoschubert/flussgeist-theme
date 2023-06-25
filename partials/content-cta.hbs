@@ -1,0 +1,20 @@
+{{{html}}}
+<aside class="gh-post-upgrade-cta">
+  <div class="gh-post-upgrade-cta-content" style="background-color: {{@site.accent_color}}">
+    {{#has visibility="paid"}}
+      <h2>{{#is "page"}}Diese Seite{{else}}Dieser Beitrag{{/is}} ist nur für Premium-Mitglieder</h2>
+    {{/has}}
+    {{#has visibility="members"}}
+      <h2>{{#is "page"}}Diese Seite{{else}}Dieser Beitrag{{/is}} ist nur für Mitglieder</h2>
+    {{/has}}
+    {{#has visibility="tiers"}}
+      <h2>{{#is "page"}}Diese Seite{{else}}Dieser Beitrag{{/is}} ist nur für {{tiers}}-Mitglieder</h2>
+    {{/has}}
+    {{#if @member}}
+      <a class="gh-btn" data-portal="account/plans" style="color:{{@site.accent_color}}">Konto upgraden</a>
+    {{else}}
+      <a class="gh-btn" data-portal="signup" style="color:{{@site.accent_color}}">Jetzt abonnieren</a>
+      <p><small>Hast Du schon ein Konto? <a data-portal="signin">Anmelden</a></small></p>
+    {{/if}}
+  </div>
+</aside>
